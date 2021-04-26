@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,9 +27,18 @@ import java.util.stream.Collectors;
  */
 public class ContentFragment extends Fragment {
 
-    public static Fragment newInstance() {
+    private ArrayList<Product> products;
+    private RecyclerView recyclerView;
+    private ProductAdapter adapter;
+
+    public RecyclerView getRecyclerView() {
+        return recyclerView;
+    }
+
+    public static Fragment newInstance(ArrayList<Product> products) {
         ContentFragment fragment = new ContentFragment();
         Bundle args = new Bundle();
+        args.putSerializable("products", products);
         fragment.setArguments(args);
         return fragment;
     }
@@ -36,12 +46,22 @@ public class ContentFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            products = (ArrayList<Product>) getArguments().getSerializable("products");
+        }
+        if (products == null) {
+            products = new ArrayList<Product>();
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_content, container, false);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        adapter = new ProductAdapter(view.getContext(), products);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 1));
         return view;
     }
 }

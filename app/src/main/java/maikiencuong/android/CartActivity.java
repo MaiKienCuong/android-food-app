@@ -1,6 +1,7 @@
 package maikiencuong.android;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -73,6 +74,7 @@ public class CartActivity extends AppCompatActivity {
             textPrice.setText("$ " + product.getPrice());
             textQuantity.setText(quantity + "");
             viewImage.setImageResource(product.getImage());
+            Log.i("products============", bundle.getSerializable("products").toString());
         }
 
     }

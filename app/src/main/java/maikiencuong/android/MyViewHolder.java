@@ -7,9 +7,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
+public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public  TextView tvname, tvDescription, tvPrice;
+    public TextView tvName, tvDescription, tvPrice;
     public ImageView imageView, imageView2;
 
     private ItemClickListener itemClickListener;
@@ -22,13 +22,12 @@ public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClic
         super(itemView);
 
         itemView.setOnClickListener(this);
-        itemView.setOnLongClickListener(this);
 
-        tvDescription=itemView.findViewById(R.id.tvDescription);
-        tvname=itemView.findViewById(R.id.tvName);
-        tvPrice=itemView.findViewById(R.id.tvPrice);
-        imageView=itemView.findViewById(R.id.imageView);
-        imageView2=itemView.findViewById(R.id.imageView2);
+        tvDescription = itemView.findViewById(R.id.tvDescription);
+        tvName = itemView.findViewById(R.id.tvName);
+        tvPrice = itemView.findViewById(R.id.tvPrice);
+        imageView = itemView.findViewById(R.id.imageView);
+        imageView2 = itemView.findViewById(R.id.imageView2);
     }
 
     @Override
@@ -36,9 +35,4 @@ public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClic
         itemClickListener.onClick(v, getAdapterPosition(), false);
     }
 
-    @Override
-    public boolean onLongClick(View v) {
-        itemClickListener.onClick(v, getAdapterPosition(), true);
-        return true;
-    }
 }
