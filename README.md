@@ -1,3 +1,4 @@
+```diff
 # android-food-app
 
 - all
@@ -8,3 +9,5 @@
 
 - search name of item
 ![alt text](https://github.com/MaiKienCuong/android-food-app/blob/main/anh3.PNG?raw=true)
+
+```
