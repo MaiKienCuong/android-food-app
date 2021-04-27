@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:focusable="true"
     tools:context=".MainActivity">
 
@@ -123,7 +124,6 @@
         android:text=" Order a Large Pizza but the size is the equivalent of a medium/small from other places at the same price range."
         android:textSize="16sp"
         android:textStyle="bold"
-        app:flow_horizontalAlign="start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -188,8 +188,6 @@
         android:text="1"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:flow_horizontalAlign="center"
-        app:flow_verticalAlign="center"
         app:layout_constraintBottom_toBottomOf="@+id/btnCong"
         app:layout_constraintEnd_toStartOf="@+id/btnCong"
         app:layout_constraintTop_toTopOf="@+id/btnCong" />
