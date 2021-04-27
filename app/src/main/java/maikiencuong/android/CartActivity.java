@@ -1,11 +1,8 @@
 package maikiencuong.android;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -28,11 +25,6 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.cart_activity);
         getSupportActionBar().hide();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-
         textName = findViewById(R.id.textName);
         textDescription = findViewById(R.id.textDescription);
         textPrice = findViewById(R.id.textPrice);
@@ -41,7 +33,7 @@ public class CartActivity extends AppCompatActivity {
         viewImage = findViewById(R.id.viewImage);
         btnCong = findViewById(R.id.btnCong);
         btnTru = findViewById(R.id.btnTru);
-        btnAddtoCart = findViewById(R.id.btnAddtoCart);
+        btnAddtoCart=findViewById(R.id.btnAddtoCart);
 
         btnCong.setOnClickListener(new View.OnClickListener() {
             @Override
